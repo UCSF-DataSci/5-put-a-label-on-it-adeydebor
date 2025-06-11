@@ -7,7 +7,6 @@
 
 **Objective:** Load the synthetic health data, train a Logistic Regression model, and evaluate its performance.
 
-# %%
 # 1. Setup - Import necessary libraries
 import pandas as pd
 import numpy as np
@@ -17,7 +16,6 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score, confusion_matrix
 from sklearn.impute import SimpleImputer
 
-# %%
 # 2. Data Loading
 def load_data(file_path):
     """
@@ -37,7 +35,6 @@ def load_data(file_path):
         print(f"File {file_path} not found. Please run generate_data.py first.")
         return pd.DataFrame()
 
-# %%
 # 3. Data Preparation
 def prepare_data_part1(df, test_size=0.2, random_state=42):
     """
@@ -78,7 +75,6 @@ def prepare_data_part1(df, test_size=0.2, random_state=42):
     
     return X_train, X_test, y_train, y_test
 
-# %%
 # 4. Model Training
 def train_logistic_regression(X_train, y_train):
     """
@@ -101,7 +97,6 @@ def train_logistic_regression(X_train, y_train):
     print("Logistic Regression model trained successfully")
     return model
 
-# %%
 # 5. Model Evaluation
 def calculate_evaluation_metrics(model, X_test, y_test):
     """
@@ -144,7 +139,6 @@ def calculate_evaluation_metrics(model, X_test, y_test):
     
     return metrics
 
-# %%
 # 6. Save Results
 def save_results_part1(metrics):
     """Save the calculated metrics to a text file."""
@@ -173,7 +167,6 @@ def save_results_part1(metrics):
     
     print("Results saved to results/results_part1.txt")
 
-# %%
 # 8. Interpret Results
 def interpret_results(metrics):
     """
@@ -226,7 +219,6 @@ def interpret_results(metrics):
         'imbalance_impact_score': imbalance_impact_score
     }
 
-# %%
 # 7. Main Execution
 if __name__ == "__main__":
     print("Starting Part 1: Introduction to Classification & Evaluation")
